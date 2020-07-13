@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zoho Oauth{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+        <div class="row justify-content-center text-center text-white">
+    {% if result is defined %}
+        <h3 style="text-align: center">{{ result }}</h3>
+    {% elseif Form is defined %}
+        {{ form_start(Form) }}
+            <div class="form-group">
+        {{ form_label(Form.grant_token) }}
+        {{ form_widget(Form.grant_token, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        {{ form_widget(Form.submit, {'attr': {'class': 'btn btn-primary'}, 'label': 'Generate Access Token'}) }}
+        {{ form_end(Form) }}
+
+{#        <button class="btn btn-primary"><a href="{{ path('admin_zoho_oauth_generate') }}">Generate token</a> </button>#}
+    {% endif %}
+        </div>
+</div>
+
+{% endblock %}

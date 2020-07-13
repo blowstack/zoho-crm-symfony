@@ -1,0 +1,32 @@
+2020-07-13 19:46:20 SEVERE: Exception occured while Saving OAuthTokens to file(file::ZohoOAuthPersistenceByFile)(Warning: file_get_contents(/home/blowstack/Projects/boilerplates/zoho_crm_symfony/config/Zoho/zcrm_oauthtokens.txt): failed to open stream: No such file or directory)
+ErrorException: Warning: file_get_contents(/home/blowstack/Projects/boilerplates/zoho_crm_symfony/config/Zoho/zcrm_oauthtokens.txt): failed to open stream: No such file or directory in /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/zohocrm/php-sdk/src/oauth/persistence/ZohoOAuthPersistenceByFile.php:72
+Stack trace:
+#0 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/zohocrm/php-sdk/src/oauth/persistence/ZohoOAuthPersistenceByFile.php(23): zcrmsdk\oauth\persistence\ZohoOAuthPersistenceByFile->deleteOAuthTokens()
+#1 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/zohocrm/php-sdk/src/oauth/ZohoOAuthClient.php(66): zcrmsdk\oauth\persistence\ZohoOAuthPersistenceByFile->saveOAuthData()
+#2 /home/nolog/Projects/boilerplates/zoho_crm_symfony/src/Controller/admin/ZohoOauthController.php(64): zcrmsdk\oauth\ZohoOAuthClient->generateAccessToken()
+#3 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/http-kernel/HttpKernel.php(157): App\Controller\admin\ZohoOauthController->generateTokens()
+#4 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/http-kernel/HttpKernel.php(79): Symfony\Component\HttpKernel\HttpKernel->handleRaw()
+#5 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/framework-bundle/Controller/AbstractController.php(147): Symfony\Component\HttpKernel\HttpKernel->handle()
+#6 /home/nolog/Projects/boilerplates/zoho_crm_symfony/src/Controller/admin/ZohoOauthController.php(32): Symfony\Bundle\FrameworkBundle\Controller\AbstractController->forward()
+#7 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/http-kernel/HttpKernel.php(157): App\Controller\admin\ZohoOauthController->index()
+#8 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/http-kernel/HttpKernel.php(79): Symfony\Component\HttpKernel\HttpKernel->handleRaw()
+#9 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/http-kernel/Kernel.php(191): Symfony\Component\HttpKernel\HttpKernel->handle()
+#10 /home/nolog/Projects/boilerplates/zoho_crm_symfony/public/index.php(25): Symfony\Component\HttpKernel\Kernel->handle()
+#11 /home/nolog/.symfony/php/651fb124a9d7959445b057aba8df9d6c614bbd18-router.php(29): require('/home/nolog/Pro...')
+#12 {main}
+2020-07-13 19:46:20 SEVERE: Exception occured while Saving OAuthTokens to file(file::ZohoOAuthPersistenceByFile)(Warning: file_get_contents(/home/blowstack/Projects/boilerplates/zoho_crm_symfony/config/Zoho/zcrm_oauthtokens.txt): failed to open stream: No such file or directory)
+ErrorException: Warning: file_get_contents(/home/blowstack/Projects/boilerplates/zoho_crm_symfony/config/Zoho/zcrm_oauthtokens.txt): failed to open stream: No such file or directory in /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/zohocrm/php-sdk/src/oauth/persistence/ZohoOAuthPersistenceByFile.php:72
+Stack trace:
+#0 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/zohocrm/php-sdk/src/oauth/persistence/ZohoOAuthPersistenceByFile.php(23): zcrmsdk\oauth\persistence\ZohoOAuthPersistenceByFile->deleteOAuthTokens()
+#1 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/zohocrm/php-sdk/src/oauth/ZohoOAuthClient.php(66): zcrmsdk\oauth\persistence\ZohoOAuthPersistenceByFile->saveOAuthData()
+#2 /home/nolog/Projects/boilerplates/zoho_crm_symfony/src/Controller/admin/ZohoOauthController.php(64): zcrmsdk\oauth\ZohoOAuthClient->generateAccessToken()
+#3 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/http-kernel/HttpKernel.php(157): App\Controller\admin\ZohoOauthController->generateTokens()
+#4 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/http-kernel/HttpKernel.php(79): Symfony\Component\HttpKernel\HttpKernel->handleRaw()
+#5 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/framework-bundle/Controller/AbstractController.php(147): Symfony\Component\HttpKernel\HttpKernel->handle()
+#6 /home/nolog/Projects/boilerplates/zoho_crm_symfony/src/Controller/admin/ZohoOauthController.php(32): Symfony\Bundle\FrameworkBundle\Controller\AbstractController->forward()
+#7 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/http-kernel/HttpKernel.php(157): App\Controller\admin\ZohoOauthController->index()
+#8 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/http-kernel/HttpKernel.php(79): Symfony\Component\HttpKernel\HttpKernel->handleRaw()
+#9 /home/nolog/Projects/boilerplates/zoho_crm_symfony/vendor/symfony/http-kernel/Kernel.php(191): Symfony\Component\HttpKernel\HttpKernel->handle()
+#10 /home/nolog/Projects/boilerplates/zoho_crm_symfony/public/index.php(25): Symfony\Component\HttpKernel\Kernel->handle()
+#11 /home/nolog/.symfony/php/651fb124a9d7959445b057aba8df9d6c614bbd18-router.php(29): require('/home/nolog/Pro...')
+#12 {main}
