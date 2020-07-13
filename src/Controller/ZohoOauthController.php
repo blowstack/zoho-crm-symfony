@@ -10,7 +10,7 @@ use zcrmsdk\oauth\ZohoOAuth;
 class ZohoOauthController extends AbstractController
 {
   /**
-   * @Route("/zoho/oauth/{grant_token}", name="zoho_oauth")
+   * @Route("/admin/zoho/oauth/{grant_token}", name="zoho_oauth")
    * @param $grant_token
    */
     public function generateTokens($grant_token)
