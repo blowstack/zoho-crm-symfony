@@ -5,11 +5,12 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     zoho_crm:
-        client_id: '1000.FT392KQV3WP8YMZ4A8L3PPJO40DRKH'
-        client_secret: '676611b6b29038ab5d6cb82c2ae5bb2a7843cfb728'
+        client_id: '1000.BL2631QMU8G37XWUHUXOLZLRVVEJJH'
+        client_secret: 'd96679335576a4737f84b877a14079fa6f2f93b63d'
         redirect_uri: 'http://dummy_address'
-        currentUserEmail: 'p.golon@blowstack.com'
-        token_persistence_path: '../apps/config/Zoho'
+#        currentUserEmail: 'p.golon@blowstack.com'
+        currentUserEmail: 'b2bgenerator@gmail.com'
+        token_persistence_path: '/home/nolog/Projects/boilerplates/zoho_crm_symfony/config/Zoho'
 
 services:
     # default configuration for services in *this* file

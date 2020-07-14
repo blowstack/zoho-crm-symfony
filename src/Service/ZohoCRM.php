@@ -4,6 +4,9 @@
 namespace App\Service;
 
 
+use Symfony\Component\Config\Definition\Exception\Exception;
+use zcrmsdk\crm\crud\ZCRMModule;
+use zcrmsdk\crm\crud\ZCRMRecord;
 use zcrmsdk\crm\setup\restclient\ZCRMRestClient;
 use zcrmsdk\oauth\ZohoOAuth;
 
@@ -20,13 +23,12 @@ class ZohoCRM
             "redirect_uri" => $config_values['redirect_uri'],
             "currentUserEmail" => $config_values['currentUserEmail'],
             "accounts_url" => "https://accounts.zoho.com",
-            "token_persistence_path" => realpath($config_values['token_persistence_path']),
+            "token_persistence_path" => $config_values['token_persistence_path'],
             "access_type" => "offline",
-            "persistence_handler_class" => "ZohoOAuthPersistenceHandler"
+            "persistence_handler_class" => "ZohoOAuthPersistenceHandler",
         ];
 
         ZCRMRestClient::initialize($this->configuration);
-
     }
 
 
@@ -43,6 +45,32 @@ class ZohoCRM
         } catch (\Exception $exception) {
             return $exception;
         }
+    }
+
+    public function createLead($firstName, $lastName, $email, $description) {
+
+
+        $RecordLead = ZCRMRecord::getInstance("Leads",null);
+        $RecordLead->setFieldValue('First_Name', $firstName);
+        $RecordLead->setFieldValue('Last_Name', $lastName);
+        $RecordLead->setFieldValue('Email', $email);
+        $RecordLead->setFieldValue('Description', $description);
+
+        $Leads = ZCRMModule::getInstance('Leads');
+
+        $arrayOfLeads = [];
+        array_push($arrayOfLeads, $RecordLead);
+
+        try {
+            $response = $Leads->createRecords($arrayOfLeads);
+            $result = $response->getData()[0]->getEntityId();
+
+        }
+        catch (Exception $exception) {
+            $result = $exception;
+        }
+
+        return $result;
     }
 
 }
