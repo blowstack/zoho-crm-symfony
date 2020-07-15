@@ -25,8 +25,14 @@ class ContactController extends AbstractController
         if($ContactForm->isSubmitted() && $ContactForm->isValid()) {
 
             $data = $ContactForm->getData();
-            $zohoCRM->createLead($data['firstName'], $data['lastName'], $data['email'], $data['content']);
-
+            $zohoCRM->createLead(
+                $data['firstName'],
+                $data['lastName'],
+                $data['email'],
+                $data['content'],
+                $data['company'],
+                $data['phone']
+            );
         }
 
         return $this->render('contact/index.html.twig', [

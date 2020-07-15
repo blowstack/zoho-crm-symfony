@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
-
 {% block body %}
 
     <div class="container">
@@ -21,8 +19,18 @@
                 </div>
 
                 <div class="form-group">
+                    {{ form_label(Form.company) }}
+                    {{ form_widget(Form.company, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
                     {{ form_label(Form.email) }}
                     {{ form_widget(Form.email, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(Form.phone) }}
+                    {{ form_widget(Form.phone, {'attr': {'class': 'form-control'}}) }}
                 </div>
 
                 <div class="form-group">
@@ -35,8 +43,6 @@
                 </div>
                 {{ form_end(Form) }}
             </div>
-{#            <div class="col">#}
-{#            </div>#}
         </div>
     </div>
 {% endblock %}

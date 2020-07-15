@@ -17,16 +17,12 @@ class ContactFormType extends AbstractType
         $builder
             ->add('firstName', TextType::class)
             ->add('lastName', TextType::class)
+            ->add('company', TextType::class ,['required' => false])
             ->add('email', EmailType::class)
+            ->add('phone', TextType::class)
             ->add('content', TextareaType::class)
             ->add('save', SubmitType::class)
         ;
     }
 
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults([
-            // Configure your form options here
-        ]);
-    }
 }

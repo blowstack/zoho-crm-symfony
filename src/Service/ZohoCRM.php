@@ -47,14 +47,17 @@ class ZohoCRM
         }
     }
 
-    public function createLead($firstName, $lastName, $email, $description) {
-
+    public function createLead($firstName, $lastName, $email, $description = null, $company = null, $phone = null) {
 
         $RecordLead = ZCRMRecord::getInstance("Leads",null);
         $RecordLead->setFieldValue('First_Name', $firstName);
         $RecordLead->setFieldValue('Last_Name', $lastName);
+        $RecordLead->setFieldValue('Company', $lastName);
         $RecordLead->setFieldValue('Email', $email);
+        $RecordLead->setFieldValue('Company', $company);
+        $RecordLead->setFieldValue('Phone', $phone);
         $RecordLead->setFieldValue('Description', $description);
+        $RecordLead->setFieldValue('Lead_Source', 'contact form');
 
         $Leads = ZCRMModule::getInstance('Leads');
 
@@ -64,13 +67,18 @@ class ZohoCRM
         try {
             $response = $Leads->createRecords($arrayOfLeads);
             $result = $response->getData()[0]->getEntityId();
-
         }
         catch (Exception $exception) {
             $result = $exception;
         }
 
         return $result;
+    }
+
+    function getRecords($moduleName, $email) {
+
+        $Module = ZCRMModule::getInstance($moduleName);
+        return $Module->searchRecordsByEmail($email);
     }
 
 }
