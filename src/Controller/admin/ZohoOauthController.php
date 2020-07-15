@@ -50,7 +50,7 @@ class ZohoOauthController extends AbstractController
 //        "client_id"			=> 	'1000.FT392KQV3WP8YMZ4A8L3PPJO40DRKH',
 //        "client_secret"		=> 	'676611b6b29038ab5d6cb82c2ae5bb2a7843cfb728',
 //        "redirect_uri"		=>	'http://dummy_address',
-//        "currentUserEmail"	=>	'p.golon@blowstack.com',
+//        "currentUserEmail"	=>	'dev@blowstack.com',
 //        "token_persistence_path" =>"/home/blowstack/Projects/boilerplates/zoho_crm_symfony/config/Zoho"
 //      ];
 //

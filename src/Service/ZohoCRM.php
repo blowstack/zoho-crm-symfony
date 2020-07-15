@@ -52,7 +52,6 @@ class ZohoCRM
         $RecordLead = ZCRMRecord::getInstance("Leads",null);
         $RecordLead->setFieldValue('First_Name', $firstName);
         $RecordLead->setFieldValue('Last_Name', $lastName);
-        $RecordLead->setFieldValue('Company', $lastName);
         $RecordLead->setFieldValue('Email', $email);
         $RecordLead->setFieldValue('Company', $company);
         $RecordLead->setFieldValue('Phone', $phone);

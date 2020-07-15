@@ -8,9 +8,8 @@ parameters:
         client_id: '1000.BL2631QMU8G37XWUHUXOLZLRVVEJJH'
         client_secret: 'd96679335576a4737f84b877a14079fa6f2f93b63d'
         redirect_uri: 'http://dummy_address'
-#        currentUserEmail: 'p.golon@blowstack.com'
-        currentUserEmail: 'b2bgenerator@gmail.com'
-        token_persistence_path: '/home/nolog/Projects/boilerplates/zoho_crm_symfony/config/Zoho'
+        currentUserEmail: 'dev@blowstack.com'
+        token_persistence_path: '/home/blowstack/Projects/boilerplates/zoho_crm_symfony/config/Zoho'
 
 services:
     # default configuration for services in *this* file
