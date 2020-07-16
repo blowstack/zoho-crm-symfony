@@ -47,7 +47,7 @@ class ZohoCRM
         }
     }
 
-    public function createLead($firstName, $lastName, $email, $description = null, $company = null, $phone = null) {
+    public function createLead($firstName, $lastName, $email = null, $description = null, $company = null, $phone = null, $attachment = null) {
 
         $RecordLead = ZCRMRecord::getInstance("Leads",null);
         $RecordLead->setFieldValue('First_Name', $firstName);
@@ -58,6 +58,7 @@ class ZohoCRM
         $RecordLead->setFieldValue('Description', $description);
         $RecordLead->setFieldValue('Lead_Source', 'contact form');
 
+
         $Leads = ZCRMModule::getInstance('Leads');
 
         $arrayOfLeads = [];
@@ -65,13 +66,19 @@ class ZohoCRM
 
         try {
             $response = $Leads->createRecords($arrayOfLeads);
-            $result = $response->getData()[0]->getEntityId();
+            $leadId = $response->getData()[0]->getEntityId();
+
+            if ($attachment) {
+                $RecordLead = ZCRMRecord::getInstance('Leads', $leadId);
+                $RecordLead->uploadAttachment($attachment);
+            }
+
         }
         catch (Exception $exception) {
-            $result = $exception;
+            // this is not proper way to handle exceptions on the production env
+            return $exception;
         }
 
-        return $result;
     }
 
     function getRecords($moduleName, $email) {

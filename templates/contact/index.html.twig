@@ -39,6 +39,11 @@
                 </div>
 
                 <div class="form-group">
+                    {{ form_label(Form.attachment) }}
+                    {{ form_widget(Form.attachment, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
                     {{ form_widget(Form.save, {'attr': {'class': 'btn btn-primary'}, 'label': 'Send message'}) }}
                 </div>
                 {{ form_end(Form) }}
